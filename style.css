@@ -10,16 +10,13 @@ body {
   margin: 0;
   background: #eef3f9;
   color: var(--navy);
-  /* color: var(--yellow); */
-
   font-family: "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
   line-height: 1.7;
 }
 
 .hero {
   padding: 48px 16px;
-  /* background: linear-gradient(135deg, var(--navy), var(--blue)); */
-  background: linear-gradient(135deg, var(--yellow));
+  background: linear-gradient(135deg, var(--navy), var(--blue));
   color: #fff;
   text-align: center;
 }
