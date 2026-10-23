@@ -1,80 +1,495 @@
-/* 이력서 디자인 — 교육생은 수정하지 않아도 됩니다 */
+/* ==========================================================================
+   SAKAMOTO DAYS (사카모토 데이즈) 테마 이력서 스타일시트
+   Concept: 坂本商店 (사카모토 상점) × Action Comic Pop-Art & Street Style
+   ========================================================================== */
+
 :root {
-  --yellow: #fefd48;
-  --blue: #0070c0;
-  --navy: #0e2841;
-  --gray: #5a6b7d;
+  --skm-red: #c30a14;
+  --skm-red-dark: #96070e;
+  --skm-yellow: #ffd200;
+  --skm-yellow-light: #fff5a6;
+  --skm-black: #111215;
+  --skm-dark-card: #1b1d22;
+  --skm-gray: #5c6270;
+  --skm-light: #f7f8fa;
+  --skm-border: #111215;
+  --skm-shadow: #111215;
+  --skm-cyan: #00d2ff;
+  --skm-store-green: #1a7f4b;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  background: #eef3f9;
-  color: var(--navy);
-  font-family: "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  background-color: #f0f2f5;
+  background-image: 
+    radial-gradient(#d3d7de 1.5px, transparent 1.5px),
+    radial-gradient(#d3d7de 1.5px, #f0f2f5 1.5px);
+  background-size: 24px 24px;
+  background-position: 0 0, 12px 12px;
+  color: var(--skm-black);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo", "Pretendard", "Malgun Gothic", sans-serif;
   line-height: 1.7;
 }
 
+/* 상단 경고/액션 스트라이프 테이프 */
+.caution-strip {
+  height: 14px;
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--skm-yellow),
+    var(--skm-yellow) 14px,
+    var(--skm-black) 14px,
+    var(--skm-black) 28px
+  );
+  border-bottom: 2px solid var(--skm-black);
+}
+
+/* 히어로 섹션 */
 .hero {
-  padding: 48px 16px;
-  background: linear-gradient(135deg, var(--navy), var(--blue));
+  position: relative;
+  background: linear-gradient(135deg, #111215 0%, #1f232b 50%, #85060d 100%);
   color: #fff;
+  padding: 50px 20px 70px;
   text-align: center;
+  overflow: hidden;
+  border-bottom: 4px solid var(--skm-black);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 80% 20%, rgba(195, 10, 20, 0.35) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* 사카모토 데이즈 공식 로고 */
+.logo-container {
+  margin-bottom: 18px;
+}
+
+.sakamoto-logo {
+  max-width: 340px;
+  width: 85%;
+  height: auto;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.6));
+  transition: transform 0.25s ease;
+}
+
+.sakamoto-logo:hover {
+  transform: scale(1.04) rotate(-1deg);
+}
+
+/* 상점 점장 뱃지 */
+.store-tag {
+  display: inline-block;
+  background: var(--skm-yellow);
+  color: var(--skm-black);
+  font-weight: 900;
+  font-size: 0.85rem;
+  padding: 4px 14px;
+  border-radius: 4px;
+  border: 2px solid var(--skm-black);
+  box-shadow: 3px 3px 0 var(--skm-black);
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
+}
+
+/* 프로필 사진 */
+.photo-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 12px;
 }
 
 .photo {
-  border: 4px solid #fff;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
+  border: 4px solid var(--skm-yellow);
+  box-shadow: 0 0 0 4px var(--skm-black), 0 8px 24px rgba(0, 0, 0, 0.4);
   object-fit: cover;
+  background: #fff;
+  transition: transform 0.25s ease;
 }
 
+.photo-wrapper:hover .photo {
+  transform: scale(1.05) rotate(2deg);
+}
+
+.order-stamp {
+  position: absolute;
+  bottom: 0;
+  right: -8px;
+  background: var(--skm-red);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 900;
+  padding: 3px 8px;
+  border-radius: 6px;
+  border: 2px solid #fff;
+  box-shadow: 2px 2px 0 var(--skm-black);
+  transform: rotate(-10deg);
+}
+
+.hero h1 {
+  margin: 8px 0 4px;
+  font-size: 2.2rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  text-shadow: 2px 2px 0 var(--skm-black);
+}
+
+.hero .kanji-name {
+  color: var(--skm-yellow);
+  font-size: 1.2rem;
+  margin-left: 6px;
+}
+
+.hero h2 {
+  margin: 0 0 16px;
+  font-size: 1.2rem;
+  color: #d1d5db;
+  font-weight: 600;
+}
+
+/* 명대사 말풍선 */
+.quote-bubble {
+  display: inline-block;
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--skm-black);
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 10px 18px;
+  border-radius: 12px;
+  border: 2px solid var(--skm-black);
+  box-shadow: 4px 4px 0 var(--skm-black);
+  margin-top: 6px;
+}
+
+.quote-bubble em {
+  font-style: normal;
+  color: var(--skm-red);
+}
+
+/* 본문 레이아웃 */
 main {
   display: grid;
-  gap: 20px;
-  max-width: 760px;
-  margin: -24px auto 0;
+  gap: 24px;
+  max-width: 820px;
+  margin: -40px auto 40px;
   padding: 0 16px;
+  position: relative;
+  z-index: 10;
 }
 
-.card,
-.project {
-  padding: 20px;
+/* 만화 팝아트 카드 디자인 */
+.card {
+  padding: 24px 26px;
   border-radius: 14px;
-  background: #fff;
-  box-shadow: 0 4px 16px rgb(14 40 65 / 10%);
+  background: #ffffff;
+  border: 3px solid var(--skm-black);
+  box-shadow: 6px 6px 0 var(--skm-black);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.project {
-  margin-top: 12px;
-  border: 1px solid #d5e2f0;
-  box-shadow: none;
+.card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0 var(--skm-black);
 }
 
+/* 섹션 타이틀 (만화 컷 스타일) */
 main h2 {
-  margin: 0 0 12px;
-  padding-left: 10px;
-  border-left: 4px solid var(--blue);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 16px;
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: var(--skm-black);
+  border-bottom: 3px solid var(--skm-black);
+  padding-bottom: 8px;
 }
 
-h3,
-a {
+main h2 .icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: var(--skm-yellow);
+  border: 2px solid var(--skm-black);
+  border-radius: 6px;
+  font-size: 1rem;
+  box-shadow: 2px 2px 0 var(--skm-black);
+}
+
+/* 상점 가훈 / 규칙 뱃지 리스트 */
+.store-rules {
+  background: var(--skm-yellow-light);
+  border: 2px dashed var(--skm-black);
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-top: 14px;
+}
+
+.store-rules h3 {
+  margin: 0 0 8px;
+  color: var(--skm-red-dark);
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+.store-rules ol {
   margin: 0;
-  color: var(--blue);
+  padding-left: 20px;
+  font-size: 0.9rem;
 }
 
-.meta {
-  color: var(--gray);
+.store-rules li {
+  margin-bottom: 4px;
 }
 
-footer {
-  color: var(--gray);
-  text-align: center;
+/* 프로필 소개와 단행본 커버 그리드 */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 20px;
+  align-items: start;
+}
+
+.manga-cover {
+  width: 130px;
+  height: auto;
+  border-radius: 8px;
+  border: 3px solid var(--skm-black);
+  box-shadow: 4px 4px 0 var(--skm-black);
+  transition: transform 0.2s ease;
+}
+
+.manga-cover:hover {
+  transform: scale(1.05) rotate(2deg);
+}
+
+/* 스킬 칩 리스트 */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skills li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: #f7f9fc;
+  border: 2px solid var(--skm-black);
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.92rem;
+  box-shadow: 3px 3px 0 var(--skm-black);
+  transition: transform 0.15s ease;
+}
+
+.skills li:hover {
+  transform: translateY(-2px);
+  background: #fff;
 }
 
 .level {
-  margin-left: 8px;
-  padding: 2px 10px;
-  border-radius: 999px;
-  background: var(--blue);
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  font-weight: 900;
+  border: 1px solid var(--skm-black);
+}
+
+.level.master {
+  background: var(--skm-red);
   color: #fff;
-  font-size: 0.8rem;
+}
+
+.level.order {
+  background: var(--skm-yellow);
+  color: var(--skm-black);
+}
+
+.level.pro {
+  background: var(--skm-cyan);
+  color: var(--skm-black);
+}
+
+/* 프로젝트 아티클 */
+.project {
+  margin-top: 16px;
+  padding: 18px 20px;
+  border-radius: 10px;
+  background: #ffffff;
+  border: 2px solid var(--skm-black);
+  box-shadow: 4px 4px 0 rgba(17, 18, 21, 0.15);
+  transition: transform 0.15s ease;
+}
+
+.project:hover {
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 0 var(--skm-black);
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+h3 {
+  margin: 0;
+  color: var(--skm-red);
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.project .mission-badge {
+  background: var(--skm-black);
+  color: var(--skm-yellow);
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.meta {
+  color: var(--skm-gray);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin: 4px 0 10px;
+}
+
+.project ul {
+  margin: 8px 0 0;
+  padding-left: 20px;
+}
+
+.project li {
+  margin-bottom: 4px;
+  font-size: 0.92rem;
+}
+
+/* 교육 및 라이선스 */
+.education-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.education-list li {
+  position: relative;
+  padding-left: 26px;
+  margin-bottom: 10px;
+  font-size: 0.92rem;
+}
+
+.education-list li::before {
+  content: "🔫";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 0.9rem;
+}
+
+/* 링크 버튼 */
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  background: var(--skm-yellow);
+  color: var(--skm-black);
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 0.95rem;
+  border: 2px solid var(--skm-black);
+  border-radius: 8px;
+  box-shadow: 4px 4px 0 var(--skm-black);
+  transition: all 0.15s ease;
+}
+
+.links a:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--skm-black);
+  background: #ffe042;
+}
+
+.links a.official {
+  background: var(--skm-red);
+  color: #fff;
+}
+
+.links a.official:hover {
+  background: #e60012;
+}
+
+/* 푸터 */
+footer {
+  padding: 30px 20px 40px;
+  text-align: center;
+  color: var(--skm-gray);
+  font-size: 0.88rem;
+  border-top: 3px solid var(--skm-black);
+  background: #ffffff;
+}
+
+footer p {
+  margin: 4px 0;
+}
+
+footer .store-motto {
+  font-weight: 800;
+  color: var(--skm-red);
+}
+
+/* 반응형 모바일 */
+@media (max-width: 640px) {
+  .hero {
+    padding: 36px 14px 50px;
+  }
+  
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .manga-cover {
+    justify-self: center;
+    width: 110px;
+  }
+
+  .card {
+    padding: 18px 16px;
+  }
 }

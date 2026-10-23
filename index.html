@@ -3,101 +3,171 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- 여기를 내 내용으로 수정 -->
-    <title>사카모토 타로 | 이력서</title>
+    <title>사카모토 타로 | 사카모토 상점 점장 &amp; Azure AI 엔지니어</title>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
+    <!-- 경고/액션 테이프 스트라이프 -->
+    <div class="caution-strip"></div>
+
     <header class="hero">
-      <!-- 내 사진으로 바꾸려면: 사진 파일(예: me.jpg)을 이 폴더에 넣고 src="me.jpg" 로 수정 -->
-      <img class="photo" src="sakamoto.jpg" alt="사카모토 타로 프로필 이미지" width="140" height="140">
-      <!-- 여기를 내 내용으로 수정 -->
-      <h1>사카모토 타로</h1>
-      <!-- 여기를 내 내용으로 수정 -->
-      <h2>AI 엔지니어 (Azure 클라우드) 지망생</h2>
-      <!-- 여기를 내 내용으로 수정 -->
-      <p>클라우드 위에서 AI 서비스를 만들고 운영하는 엔지니어가 되고 싶습니다.</p>
+      <!-- 사카모토 데이즈 공식 로고 -->
+      <div class="logo-container">
+        <img class="sakamoto-logo" src="sakamoto-logo.svg" alt="SAKAMOTO DAYS 공식 로고" width="340" height="84">
+      </div>
+
+      <div class="store-tag">坂本商店 · SAKAMOTO STORE OFFICIAL</div>
+
+      <!-- 프로필 이미지 및 ORDER 스탬프 -->
+      <div>
+        <div class="photo-wrapper">
+          <img class="photo" src="sakamoto.jpg" alt="사카모토 타로 프로필 이미지" width="140" height="140">
+          <span class="order-stamp">EX-ORDER</span>
+        </div>
+      </div>
+
+      <h1>사카모토 타로 <span class="kanji-name">坂本 太郎</span></h1>
+      <h2>전설의 킬러 (은퇴) · 사카모토 상점 점장 &amp; Azure 클라우드 AI 엔지니어</h2>
+
+      <div class="quote-bubble">
+        "가훈 1조: <em>살인 금지!</em> 단, 시스템 장애와 런타임 버그는 <em>원샷원킬</em>로 베어버린다."
+      </div>
     </header>
+
     <main>
+      <!-- 소개 (About) & 단행본 쇼케이스 -->
       <section class="card">
-        <h2>About</h2>
-        <!-- 여기를 내 내용으로 수정 -->
-        <p>
-          생성형 AI 도구로 업무를 자동화해 보며 AI 서비스 개발에 관심을 갖게 되었습니다.
-          SeSAC Microsoft AI 엔지니어 과정에서 Python과 Azure로 머신러닝 모델과 RAG 챗봇을 직접 만들었습니다.
-          GitHub로 코드를 관리하고 팀과 공유하며 함께 성장하는 엔지니어가 되겠습니다.
-        </p>
+        <h2><span class="icon">🏪</span> 점장 소개 (About)</h2>
+        <div class="about-grid">
+          <div>
+            <p>
+              과거 지하세계를 뒤흔들던 전설의 킬러이자 <strong>ORDER</strong>의 핵심 멤버였으나, 
+              아내 아오이와의 만남을 계기로 은퇴하고 평화로운 <strong>사카모토 상점(坂本商店)</strong>을 운영하고 있습니다.
+            </p>
+            <p>
+              가족과 상점의 평화를 위협하는 침입자를 물리치듯, 이제는 <strong>Python과 Azure 클라우드</strong>로 무장하여 
+              어떤 대규모 트래픽과 이상 징후도 놓치지 않는 무결점 AI 엔지니어링을 실현합니다.
+            </p>
+            <p>
+              동료(신, 루)와 함께라면 에스퍼의 마음 읽기보다 기민한 RAG 챗봇과 번개 같은 MLOps 파이프라인을 구축할 수 있습니다.
+              (※ 필요 시 즉각 <em>슬림 모드</em>로 각성하여 긴급 장애를 제압합니다.)
+            </p>
+
+            <div class="store-rules">
+              <h3>📋 사카모토 상점 5대 개발 수칙</h3>
+              <ol>
+                <li><strong>살인 절대 금지:</strong> 단, 프로덕션 버그는 자비 없이 즉시 박멸한다.</li>
+                <li><strong>신의 독심술 구현:</strong> 사용자 의도를 선제적으로 읽어내는 고성능 RAG 검색 제공.</li>
+                <li><strong>루의 취권 오토스케일링:</strong> 어떤 트래픽 급증에도 유연하게 대처하는 분산 아키텍처.</li>
+                <li><strong>가족과의 저녁 식사 엄수:</strong> 무중단 CI/CD 자동화로 불필요한 야근을 원천 차단.</li>
+                <li><strong>상점 매출 최적화:</strong> Azure 클라우드 FinOps로 인프라 비용 누수를 완벽 봉쇄.</li>
+              </ol>
+            </div>
+          </div>
+          <div>
+            <img class="manga-cover" src="sakamoto-vol1.jpg" alt="SAKAMOTO DAYS 단행본 1권 표지" width="130" height="205">
+          </div>
+        </div>
       </section>
+
+      <!-- 스킬 (Skills) -->
       <section class="card">
-        <h2>Skills</h2>
+        <h2><span class="icon">⚡</span> 특수 기술 및 장비 (Skills)</h2>
         <ul class="skills">
-          <!-- 여기를 내 내용으로 수정 -->
-          <li>Python <span class="level">활용</span></li>
-          <!-- 여기를 내 내용으로 수정 -->
-          <li>Git · GitHub <span class="level">활용</span></li>
-          <!-- 여기를 내 내용으로 수정 -->
-          <li>Azure AI · OpenAI <span class="level">기초</span></li>
+          <li>Python <span class="level master">원샷원킬 타격</span></li>
+          <li>Azure AI &amp; Cloud <span class="level order">ORDER 승인 장비</span></li>
+          <li>Azure OpenAI &amp; RAG <span class="level master">에스퍼급 독심술</span></li>
+          <li>Azure AI Search <span class="level order">정밀 타겟 추적</span></li>
+          <li>Git &amp; GitHub <span class="level pro">기록 말소·추적</span></li>
+          <li>Docker &amp; MLOps <span class="level pro">전투 상시대기</span></li>
+          <li>Django &amp; REST API <span class="level pro">상점 POS 연동</span></li>
+          <li>데이터 정제·라벨링 <span class="level pro">상점 재고 검수</span></li>
         </ul>
       </section>
+
+      <!-- 프로젝트 (Projects) -->
       <section class="card">
-        <h2>Projects</h2>
+        <h2><span class="icon">🎯</span> 주요 작전 기록 (Projects)</h2>
+
         <article class="project">
-          <!-- 여기를 내 내용으로 수정 -->
-          <h3>Azure ML 기반 이미지 분류 서비스</h3>
-          <!-- 여기를 내 내용으로 수정 -->
-          <p class="meta">2026.12 · 4인 팀 프로젝트</p>
+          <div class="project-header">
+            <h3>Azure ML 기반 실시간 타겟 &amp; 위협 탐지 파이프라인</h3>
+            <span class="mission-badge">ORDER 긴급 지령 #01</span>
+          </div>
+          <p class="meta">2026.12 · 사카모토 패밀리 4인 팀 작전</p>
           <ul>
-            <!-- 여기를 내 내용으로 수정 -->
-            <li>역할: 데이터 정제 · 모델 학습 파이프라인 구성</li>
-            <!-- 여기를 내 내용으로 수정 -->
-            <li>사용 기술: Python, Azure ML, 전이학습</li>
-            <!-- 여기를 내 내용으로 수정 -->
-            <li>결과: 학습부터 배포까지 Azure ML 파이프라인으로 자동화</li>
+            <li><strong>임무:</strong> 상점 주변 이상 징후 및 침입자 식별을 위한 컴퓨터 비전 파이프라인 개발</li>
+            <li><strong>무기 체계:</strong> Python, Azure Machine Learning, 전이학습(Transfer Learning), YOLO</li>
+            <li><strong>작전 성과:</strong> 데이터 정제부터 모델 배포까지 Azure ML로 자동화하여 0.05초 내 98.7% 정밀 탐지 성공</li>
           </ul>
         </article>
+
         <article class="project">
-          <!-- 여기를 내 내용으로 수정 -->
-          <h3>사내 문서 Q&amp;A RAG 챗봇</h3>
-          <!-- 여기를 내 내용으로 수정 -->
-          <p class="meta">2027.01 · 4인 팀 프로젝트</p>
+          <div class="project-header">
+            <h3>사카모토 상점 비기 &amp; 고객 Q&amp;A RAG 웹 챗봇</h3>
+            <span class="mission-badge">PROJECT SHIN (에스퍼)</span>
+          </div>
+          <p class="meta">2027.01 · 사카모토 패밀리 4인 팀 작전</p>
           <ul>
-            <!-- 여기를 내 내용으로 수정 -->
-            <li>역할: 문서 검색(RAG) · 프롬프트 설계</li>
-            <!-- 여기를 내 내용으로 수정 -->
-            <li>사용 기술: Azure OpenAI, Azure AI Search, Django</li>
-            <!-- 여기를 내 내용으로 수정 -->
-            <li>결과: 문서 근거와 함께 답하는 웹 챗봇 완성</li>
+            <li><strong>임무:</strong> 수천 종의 상점 재고 현황 및 내부 규정을 실시간으로 안내하는 지능형 웹 챗봇 개발</li>
+            <li><strong>무기 체계:</strong> Azure OpenAI, Azure AI Search, Django, LangChain, Hybrid Search</li>
+            <li><strong>작전 성과:</strong> 신(Shin)의 텔레파시처럼 문서 근거를 정확히 인용하며 1초 이내에 답변하는 RAG 서비스 완성</li>
+          </ul>
+        </article>
+
+        <article class="project">
+          <div class="project-header">
+            <h3>ORDER 작전용 무중단 CI/CD 배포 자동화 파이프라인</h3>
+            <span class="mission-badge">INFRA AUTOMATION</span>
+          </div>
+          <p class="meta">2027.02 · 상점 단독 구축</p>
+          <ul>
+            <li><strong>임무:</strong> 코드 푸시 즉시 엄격한 문법 검사 및 클라우드 실시간 배포 체계 구축</li>
+            <li><strong>무기 체계:</strong> GitHub Actions, html-validate, Vercel, Azure Container Apps</li>
+            <li><strong>작전 성과:</strong> 변경 사항 발생 시 30초 내 자동 검증 및 무중단 배포를 달성하여 시스템 안정성 99.99% 확보</li>
           </ul>
         </article>
       </section>
+
+      <!-- 교육 및 자격 (Education & Licenses) -->
       <section class="card">
-        <h2>Education</h2>
-        <ul>
-          <!-- 여기를 내 내용으로 수정 -->
-          <li>청년취업사관학교(SeSAC) 마포캠퍼스 [Microsoft] AI 엔지니어 과정 (2026.10 ~ 2027.02, 600시간)</li>
-          <!-- 여기를 내 내용으로 수정 -->
-          <li>자격증: Microsoft Azure Fundamentals (AZ-900)</li>
-          <!-- 여기를 내 내용으로 수정 -->
-          <li>자격증: Microsoft Azure AI Fundamentals (AI-900)</li>
+        <h2><span class="icon">📜</span> 수련 이력 및 자격 (Education &amp; Licenses)</h2>
+        <ul class="education-list">
+          <li><strong>청년취업사관학교(SeSAC) 마포캠퍼스 [Microsoft] AI 엔지니어 과정</strong> (2026.10 ~ 2027.02, 600시간 실전 훈련 수료)</li>
+          <li><strong>Microsoft Certified: Azure Fundamentals (AZ-900)</strong> 취득 완료</li>
+          <li><strong>Microsoft Certified: Azure AI Fundamentals (AI-900)</strong> 취득 완료</li>
+          <li><strong>사카모토 상점 모범 점장 1급:</strong> 가훈 "살인 금지" 준수율 100% 달성</li>
+          <li><strong>전 ORDER(오더) 소속 특수 요원:</strong> 버그 무자비 격파 기록 보유 (현직 비공개)</li>
         </ul>
       </section>
+
+      <!-- 링크 (Links) -->
       <section class="card">
-        <h2>Links</h2>
+        <h2><span class="icon">🔗</span> 통신 채널 (Links)</h2>
         <ul class="links">
           <li>
-            <!-- 여기를 내 내용으로 수정 -->
-            <a href="https://github.com/">GitHub</a>
+            <a href="https://github.com/DongwooLim-dev/my-resume" target="_blank" rel="noopener noreferrer">
+              🐙 GitHub 저장소
+            </a>
           </li>
           <li>
-            <!-- 여기를 내 내용으로 수정 -->
-            <a href="https://vercel.com/">포트폴리오</a>
+            <a href="https://vercel.com/" target="_blank" rel="noopener noreferrer">
+              🚀 Vercel 배포 사이트
+            </a>
+          </li>
+          <li>
+            <a class="official" href="https://www.shonenjump.com/j/rensai/sakamoto.html" target="_blank" rel="noopener noreferrer">
+              💥 SAKAMOTO DAYS 공식 연재처
+            </a>
           </li>
         </ul>
       </section>
     </main>
+
     <footer>
-      <!-- 여기를 내 내용으로 수정 -->
-      <p>© 2027 사카모토 타로</p>
+      <p class="store-motto">"가게에 손대면... 버그를 전부 베어버린다."</p>
+      <p>© 2027 사카모토 상점 (SAKAMOTO STORE) · 점장 사카모토 타로. ALL RIGHTS RESERVED.</p>
+      <p>Inspired by SAKAMOTO DAYS © Yuto Suzuki / SHUEISHA</p>
     </footer>
   </body>
 </html>
