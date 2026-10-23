@@ -1,5 +1,6 @@
 /* 이력서 디자인 — 교육생은 수정하지 않아도 됩니다 */
 :root {
+  --yellow: #fefd48;
   --blue: #0070c0;
   --navy: #0e2841;
   --gray: #5a6b7d;
@@ -8,7 +9,9 @@
 body {
   margin: 0;
   background: #eef3f9;
-  color: var(--navy);
+  /* color: var(--navy); */
+  color: var(--yellow);
+
   font-family: "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
   line-height: 1.7;
 }
