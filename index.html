@@ -169,5 +169,86 @@
       <p>© 2027 사카모토 상점 (SAKAMOTO STORE) · 점장 사카모토 타로. ALL RIGHTS RESERVED.</p>
       <p>Inspired by SAKAMOTO DAYS © Yuto Suzuki / SHUEISHA</p>
     </footer>
+    <!-- 사카모토 데이즈 1기 OP (Vaundy - 走れSAKAMOTO) 플로팅 BGM 플레이어 -->
+    <div id="bgm-player-container" style="position: fixed; width: 1px; height: 1px; opacity: 0; pointer-events: none; bottom: 0; right: 0;">
+      <div id="yt-player"></div>
+    </div>
+    <button type="button" id="bgm-toggle-btn" class="bgm-btn" aria-label="사카모토 데이즈 1기 OST 재생 및 정지">
+      <span class="bgm-icon">🎵</span>
+      <span class="bgm-text">1기 OST</span>
+    </button>
+
+    <script>
+      let ytPlayer = null;
+      let isPlaying = false;
+      let isReady = false;
+      let playRequested = false;
+
+      function updateBtnState(playing) {
+        isPlaying = playing;
+        const btn = document.getElementById('bgm-toggle-btn');
+        if (!btn) return;
+        const text = btn.querySelector('.bgm-text');
+        const icon = btn.querySelector('.bgm-icon');
+        if (playing) {
+          btn.classList.add('playing');
+          if (text) text.textContent = 'OST 정지';
+          if (icon) icon.textContent = '🔊';
+        } else {
+          btn.classList.remove('playing');
+          if (text) text.textContent = '1기 OST';
+          if (icon) icon.textContent = '🎵';
+        }
+      }
+
+      window.onYouTubeIframeAPIReady = function() {
+        ytPlayer = new YT.Player('yt-player', {
+          height: '1',
+          width: '1',
+          videoId: 'jbgG5tzgP9k',
+          playerVars: {
+            playsinline: 1,
+            controls: 0,
+            disablekb: 1,
+            loop: 1,
+            playlist: 'jbgG5tzgP9k'
+          },
+          events: {
+            onReady: function() {
+              isReady = true;
+              if (playRequested) {
+                ytPlayer.playVideo();
+                playRequested = false;
+              }
+            },
+            onStateChange: function(event) {
+              if (event.data === YT.PlayerState.PLAYING) {
+                updateBtnState(true);
+              } else if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) {
+                updateBtnState(false);
+              }
+            }
+          }
+        });
+      };
+
+      const ytScript = document.createElement('script');
+      ytScript.src = 'https://www.youtube.com/iframe_api';
+      document.head.appendChild(ytScript);
+
+      document.getElementById('bgm-toggle-btn').addEventListener('click', function() {
+        if (!isReady) {
+          playRequested = !playRequested;
+          const text = this.querySelector('.bgm-text');
+          if (text) text.textContent = playRequested ? '로딩 중...' : '1기 OST';
+          return;
+        }
+        if (isPlaying) {
+          ytPlayer.pauseVideo();
+        } else {
+          ytPlayer.playVideo();
+        }
+      });
+    </script>
   </body>
 </html>
