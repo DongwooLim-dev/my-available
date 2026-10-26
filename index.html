@@ -249,6 +249,30 @@
           ytPlayer.playVideo();
         }
       });
+      // 우클릭 및 개발자 도구 단축키 방지
+      document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+      });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'F12' || e.keyCode === 123) {
+          e.preventDefault();
+          return false;
+        }
+        if ((e.ctrlKey || e.metaKey) && e.shiftKey && ['I', 'i', 'J', 'j', 'C', 'c'].includes(e.key)) {
+          e.preventDefault();
+          return false;
+        }
+        if ((e.ctrlKey || e.metaKey) && (e.key === 'u' || e.key === 'U' || e.key === 's' || e.key === 'S')) {
+          e.preventDefault();
+          return false;
+        }
+      });
+
+      // 개발자 도구 콘솔 진입 시 사카모토 상점 보안 경고
+      console.log('%c坂本商店 SAKAMOTO STORE', 'color: #c30a14; font-size: 20px; font-weight: bold;');
+      console.log('%c가훈 1조: 소스코드 무단 열람 및 변조 절대 금지!', 'color: #111215; font-size: 14px; font-weight: bold;');
+
     </script>
   </body>
 </html>
